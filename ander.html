@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY Anderson - ¡Ofertas tentadoras!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffeeba;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #ff6f61;
+            padding-bottom: 20px;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: rotate(360deg);
+        }
+
+        .product-details {
+            text-align: left;
+        }
+
+        .product-details h2 {
+            font-size: 2em;
+            margin: 0;
+            color: #ff6f61;
+        }
+
+        .product-details p {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .product-details .price {
+            font-size: 1.8em;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .product-details .offer {
+            font-size: 1.4em;
+            color: #d9534f;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .comment-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .comment-section h3 {
+            font-size: 2em;
+            color: #ff6f61;
+        }
+
+        .comment-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: 2px solid #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .comment-section button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .comment-section button:hover {
+            background-color: #e94e3f;
+            transform: scale(1.1);
+        }
+
+        .subscribe-section {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .subscribe-section h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subscribe-section input[type="email"] {
+            width: 70%;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .subscribe-section button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-section button:hover {
+            background-color: #218838;
+        }
+
+        .contact-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .contact-section h3 {
+            font-size: 2em;
+            color: #ff6f61;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .map-section {
+            margin: 40px 0;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        footer p span {
+            font-style: italic;
+            color: #ffeeba;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ONLY Anderson - ¡Ofertas tentadoras!</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#contact">Contáctenos</a>
+    <a href="#login">Login</a>
+</nav>
+
+<div class="container">
+    <div class="product">
+        <img src="Multimedia (1).jfif" alt="Producto 1">
+        <div class="product-details">
+            <h2>Producto 1</h2>
+            <p>Foto curiosa 😂</p>
+            <p class="price">$20K</p>
+            <p class="offer">¡Aprovecha la oferta, que se acaban!</p>
+            <a href="https://www.youtube.com/?app=desktop&hl=es" class="btn">ADQUIRIR</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="Multimedia (2).jfif" alt="Producto 2">
+        <div class="product-details">
+            <h2>Producto 2</h2>
+            <p>Foto patas 😜</p>
+            <p class="price">$30K</p>
+            <p class="offer">¡Oferta limitada, no te lo pierdas!</p>
+            <a href="https://www.youtube.com/?app=desktop&hl=es" class="btn">ADQUIRIR</a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="Multimedia (2).jfif" alt="Galería 1">
+        <img src="Multimedia (1).jfif" alt="Galería 2">
+        <img src="Multimedia (2).jfif" alt="Galería 3">
+    </div>
+
+    <div class="comment-section">
+        <h3>Que tipo de contenido te gustaria vv</h3>
+        <textarea placeholder="Deja tu comentario aquí..."></textarea>
+        <button>Enviar Comentario</button>
+    </div>
+
+    <div class="subscribe-section">
+        <h3>¡Suscríbete para más ofertas!</h3>
+        <input type="email" placeholder="Ingresa tu email">
+        <button>Suscribirse</button>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h3>Contáctenos</h3>
+        <p>Teléfono: <a href="tel:3164178058">316 417 8058</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/ANDERSONGOMEZ">ANDERSON GOMEZ</a></p>
+    </div>
+
+    <div class="map-section">
+        <h3>Visítanos en Granada Meta para hacer tus fantasias reales</h3>
+       
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 ONLY Anderson. Todos los derechos reservados. <span>FOTOS EDICION LIMITADA</span></p>
+</footer>
+
+</body>
+</html>
